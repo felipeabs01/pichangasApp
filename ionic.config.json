@@ -1,0 +1,7 @@
+{
+  "name": "pichangas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
