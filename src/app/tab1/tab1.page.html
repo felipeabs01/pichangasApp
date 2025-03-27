@@ -1,17 +1,72 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Cantidad de jugadores: {{cantJugadores}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+
+<ion-content>
+
+ 
+  <ion-button (click)="cambiarCantidadJugadores()" expand="block">Cambiar cantidad de jugadores</ion-button>
+  
+  <ion-item>
+    <ion-input label="Color camiseta 1" [(ngModel)]="colorCamisetaAlfa" placeholder="Opcional"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Color camiseta 2" [(ngModel)]="colorCamisetaBeta" placeholder="Opcional"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Fecha/Hora/Lugar" [(ngModel)]="fechaHoraCancha" placeholder="Opcional"></ion-input>
+  </ion-item>
+  
+
+
+  
+
+  <ion-list>
+    <ion-item-sliding  *ngFor="let jug of jugadores; let i = index" >
+     <div *ngIf="verDiferenciasEquipos" class="text-center">
+       <strong *ngIf="i === 0">Equipo 1 <span *ngIf="cantidadEquipoAlfa">/ puntos equipo: {{cantidadEquipoAlfa}}</span></strong>
+     </div>
+     <div *ngIf="verDiferenciasEquipos" class="text-center">
+        <strong *ngIf="i === mitadCantidad">Equipo 2 <span *ngIf="cantidadEquipoBeta">/ puntos equipo: {{cantidadEquipoBeta}}</span></strong>
+      </div>
+      <ion-item>
+        <!-- <ion-icon slot="start"  name="arrow-back"></ion-icon> -->
+        <ion-icon *ngIf="verDiferenciasEquipos" slot="start" [color]="i < mitadCantidad ? 'primary' : 'danger'" name="ellipse"></ion-icon>
+        <ion-checkbox *ngIf="puedeSeleccionarCapitanes" slot="start" [(ngModel)]="jug.esCapitan"></ion-checkbox>
+     
+        <!-- <ion-label (ionFocus)="jug.puedeCalificar = true;cambio($event,jug)">Jugador {{jug.numero}}:</ion-label> -->
+        <ion-input (ionFocus)="jug.puedeCalificar = true;cambio($event,jug)" [placeholder]="'Jugador '+jug.numero" [label]="" [(ngModel)]="jug.nombre"></ion-input>
+        <!-- <ion-badge *ngIf="jug.calificacion" slot="end">{{jug.calificacion}}</ion-badge> -->
+        <!-- <ion-icon *ngIf="jug.calificacion" slot="end" matTooltip="Calificar jugador" color="warning" name="star-half"></ion-icon> -->
+        <ion-icon slot="end" [ngClass]="{'icono-verde': jug.calificacion>=1}"  name="football-outline" (click)="jug.calificacion=1"></ion-icon>
+        <ion-icon slot="end" [ngClass]="{'icono-verde': jug.calificacion >=2 }" name="football-outline" (click)="jug.calificacion=2"></ion-icon>
+        <ion-icon slot="end" [ngClass]="{'icono-verde': jug.calificacion >=3 }" name="football-outline" (click)="jug.calificacion=3"></ion-icon>
+        <ion-icon slot="end" [ngClass]="{'icono-verde': jug.calificacion >=4 }" name="football-outline" (click)="jug.calificacion=4"></ion-icon>
+        <ion-icon slot="end" [ngClass]="{'icono-verde': jug.calificacion >=5 }" name="football-outline" (click)="jug.calificacion=5"></ion-icon>
+
+      </ion-item>
+      <!-- <ion-range (ionBlur)="jug.puedeCalificar=false"  *ngIf="jug.puedeCalificar"  [(ngModel)]="jug.calificacion" ticks="true" pin="true" snaps="true" min="0" max="10"></ion-range> -->
+      <!-- <ion-range *ngIf="jug.puedeCalificar"  [(ngModel)]="jug.calificacion" (ionBlur)="jug.puedeCalificar = !jug.puedeCalificar" ticks="true" pin="true" snaps="true" min="0" max="10"></ion-range> -->
+
+      <!-- <ion-item-options side="start">
+        <ion-item-option color="primary" (click)="cambio(jug,1)">Equipo 1</ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="cambio(jug,2)">Equipo 2</ion-item-option>
+      </ion-item-options> -->
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-button (click)="realizarEquipos()" expand="block">Equipos al azar</ion-button>
+
 </ion-content>

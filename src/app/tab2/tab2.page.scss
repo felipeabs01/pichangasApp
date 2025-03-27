@@ -1,0 +1,207 @@
+
+
+  .iconoGrande{
+    font-size: 64px;
+  }
+
+.cancha{
+    background-image: url("../../assets/soccerfield.jpg");
+    background-repeat: no-repeat, repeat, center, top;
+    width: 100%;
+    height: 100%;
+}
+
+
+  
+  .portero {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .porteroTexto {
+    position: absolute;
+    top: 16%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .medioCentro {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .medioCentroTexto {
+    position: absolute;
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .medioIzq {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+  .medioIzqTexto {
+    position: absolute;
+    top: 31%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+
+  .medioDer {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+  }
+  .medioDerTexto {
+    position: absolute;
+    top: 31%;
+    right: 11%;
+    transform: translate(-50%, -50%);
+  }
+
+
+
+
+
+  .delCentro {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .delCentroTexto {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .extremoIzq {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+  .extremoIzqTexto {
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+
+  .extremoDer {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+  }
+  .extremoDerTexto {
+    position: absolute;
+    top: 45%;
+    right: 11%;
+    transform: translate(-50%, -50%);
+  }
+
+
+
+  .delCentroEquipo2 {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .delCentroTextoEquipo2 {
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .extremoIzqEquipo2 {
+    position: absolute;
+    top: 55%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+  .extremoIzqTextoEquipo2 {
+    position: absolute;
+    top: 61%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+
+  .extremoDerEquipo2 {
+    position: absolute;
+    top: 55%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+  }
+  .extremoDerTextoEquipo2 {
+    position: absolute;
+    top: 61%;
+    right: 11%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .porteroEquipo2 {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .porteroTextoEquipo2 {
+    position: absolute;
+    top: 91%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .medioCentroEquipo2 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .medioCentroTextoEquipo2 {
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .medioIzqEquipo2 {
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+  .medioIzqTextoEquipo2 {
+    position: absolute;
+    top: 76%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+
+  .medioDerEquipo2 {
+    position: absolute;
+    top: 70%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+  }
+  .medioDerTextoEquipo2 {
+    position: absolute;
+    top: 76%;
+    right: 11%;
+    transform: translate(-50%, -50%);
+  }

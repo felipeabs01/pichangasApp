@@ -13,5 +13,143 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-content class="has-header">
+
+      <img src="../../assets/soccerfield.jpg" style="min-height: 100%;"/>
+      <div class="myOverlay">
+
+        
+        
+        <div *ngFor="let jug of jugadoresAlfa;  let i = index">
+          <div class="portero">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: red;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 0" class="porteroTexto">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+            <ion-icon style="color: yellow;" size="large" name="repeat-outline"></ion-icon>
+  
+          </div>
+
+          <div class="medioIzq">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: red;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 1" class="medioIzqTexto">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+   
+          <div class="medioCentro">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: red;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 2" class="medioCentroTexto">
+            <ion-label  style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+       
+          <div class="medioDer">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: red;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 3" class="medioDerTexto">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+  
+  
+  
+          <div class="extremoIzq">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: red;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 4" class="extremoIzqTexto">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+   
+          <div class="delCentro">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: red;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 5" class="delCentroTexto">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+       
+          <div class="extremoDer">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: red;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 6" class="extremoDerTexto">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+
+
+        </div>
+       
+     
+
+
+         
+  
+        
+  
+
+
+   
+        <div *ngFor="let jug of jugadoresBeta;  let i = index">
+          <div class="extremoIzqEquipo2">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: blue;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 0"  class="extremoIzqTextoEquipo2">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+   
+          <div class="delCentroEquipo2">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: blue;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 1"  class="delCentroTextoEquipo2">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+       
+          <div class="extremoDerEquipo2">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: blue;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 2"  class="extremoDerTextoEquipo2">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+  
+  
+          
+          <div class="medioIzqEquipo2">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: blue;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 3"  class="medioIzqTextoEquipo2">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+   
+          <div class="medioCentroEquipo2">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: blue;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 4"  class="medioCentroTextoEquipo2">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+       
+          <div class="medioDerEquipo2">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: blue;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 5"  class="medioDerTextoEquipo2">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+  
+          <div class="porteroEquipo2">
+            <ion-icon class="iconoGrande" name="shirt"  aria-label="Favorite" style="color: blue;"> </ion-icon>
+          </div>
+          <div *ngIf="i == 6"  class="porteroTextoEquipo2">
+            <ion-label style="color: rgb(255, 255, 255);"><strong>{{jug.nombre}} - {{jug.calificacion}} </strong></ion-label>
+          </div>
+  
+        </div>
+   
+
+
+    
+     
+      </div>
+
+  </ion-content>
+  
+
+
+
 </ion-content>
