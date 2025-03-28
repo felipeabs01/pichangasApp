@@ -1,9 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-// import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
+import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
 
-import { ActionSheetController, IonModal, ToastController } from '@ionic/angular';
+import { ActionSheetController, IonModal, ModalController, ToastController } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 import { EquiposService } from '../tabs/equipo.service';
+import { Storage } from '@ionic/storage';
+
+import { Clipboard,ReadResult } from '@capacitor/clipboard';
+import { ModalImportarJugadoresComponent } from '../tabs/modal-importar-jugadores/modal-importar-jugadores.component';
 
 @Component({
   selector: 'app-tab1',
@@ -13,7 +17,7 @@ import { EquiposService } from '../tabs/equipo.service';
 })
 export class Tab1Page {
 
-  // @ViewChild(IonModal) modal: IonModal;
+  @ViewChild(IonModal) modal!: IonModal;
 
  
   jugador:any;
@@ -48,24 +52,27 @@ export class Tab1Page {
     public actionSheetController: ActionSheetController,
     public toastController: ToastController,
     public equiposService: EquiposService,
-    // private socialSharing: SocialSharing
+    private storage: Storage,
+    private modalCtrl: ModalController,
+    private socialSharing: SocialSharing
   ) {
-   
+    this.storage.create();
     this.setearJugadores(this.cantJugadores);
   }
 
+  async openModal() {
+    const modal = await this.modalCtrl.create({
+      component: ModalImportarJugadoresComponent,
+    });
+    modal.present();
 
-  cancel() {
-    // this.modal.dismiss(null, 'cancel');
-    // this.isModalOpen = false;
+    const { data, role } = await modal.onWillDismiss();
+
+    if (role === 'confirm') {
+      console.log(data);
+      this.jugadores = data;
+    }
   }
-
-  confirm() {
-
-    // this.modal.dismiss(this.jugador, 'confirm');
-    // this.isModalOpen = false;
-  }
-
  
 
   setOpen(isOpen:any, jug:any) {
@@ -129,7 +136,10 @@ export class Tab1Page {
       header: 'Realizar equipos al azar',
       cssClass: 'my-custom-class',
       buttons: [
-         { text: 'Seleccionar jugadores fijos',icon: 'people',data: 1,
+      //    { text: 'Seleccionar jugadores fijos',icon: 'people',data: 1,
+      //   handler: () => {console.log('people clicked');}
+      // },
+         { text: 'Importar lista de jugadores',icon: 'people',data: 4,
         handler: () => {console.log('people clicked');}
       },
          { text: 'Realizar equipos al azar',icon: 'people',data: 2,
@@ -149,6 +159,9 @@ export class Tab1Page {
       this.puedeSeleccionarCapitanes = false;
       if(data==1){
         this.puedeSeleccionarCapitanes = true;
+      }
+      if(data==4){
+        this.openModal();
       }
   
       if(data==2){
@@ -180,11 +193,13 @@ export class Tab1Page {
           message: 'Equipos',
           url: this.mensaje,
         };
-        // this.socialSharing.shareWithOptions(options);
+        this.socialSharing.shareWithOptions(options);
+
       }
 
     }
   }
+
 
 
 

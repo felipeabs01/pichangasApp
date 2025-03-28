@@ -7,15 +7,16 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 
 import { TabsPage } from './tabs.page';
 import { EquiposService } from './equipo.service';
+import { ModalImportarJugadoresComponent } from './modal-importar-jugadores/modal-importar-jugadores.component';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
   ],
-  declarations: [TabsPage],
+  declarations: [TabsPage,ModalImportarJugadoresComponent],
   providers: [
     EquiposService,
 ]
